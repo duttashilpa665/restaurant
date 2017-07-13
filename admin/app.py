@@ -20,38 +20,38 @@ def new_student():
 def addrec():
    if request.method == 'POST':
       try:
-         nm = request.form['nm']
-         addr = request.form['add']
-         city = request.form['city']
-         pin = request.form['pin']
+         catid = request.form['catid']
+         categoryname = request.form['categoryname']
+         price = request.form['price']
+         des = request.form['des']
          msg="Done"
-         print nm
+         print categoryname
 
          try:
         # print("writing","insert into product_details values(`"+idx+"`,`"+name+"`,`"+cat+"`,`"+qty+"`,`"+price+"`);")
-            cursor.execute("insert into coco values('"+idx+"','"+name+"','"+cat+"','"+qty+"','"+price+"');")
+            cursor.execute("insert into coco values('"+catid+"','"+categoryname+"','"+price+"','"+des+"');")
             print 1
             db.commit()
          except:
-            cursor.execute("create table coco (product_id varchar(10) primary key,product varchar(10),catagory varchar(10),quantity int(10),price int(10));")
-            cursor.execute("insert into coco values('"+idx+"','"+name+"','"+cat+"','"+qty+"','"+price+"');")
+            cursor.execute("create table coco (cat_id varchar(10) primary key,name varchar(10),price int(10),des varchar(100));")
+            cursor.execute("insert into coco values('"+catid+"','"+categoryname+"','"+price+"','"+des+"');")
             print 2
             db.commit()
-         
-         # with sql.connect("database.db") as con:
-         #    cur = con.cursor()
-            
-         #    cur.execute("INSERT INTO students (name,addr,city,pin) VALUES (?,?,?,?)",(nm,addr,city,pin) )
-            
-         #    con.commit()
-         #    msg = "Record successfully added"
+             
+             # with sql.connect("database.db") as con:
+             #    cur = con.cursor()
+                
+             #    cur.execute("INSERT INTO students (name,addr,city,pin) VALUES (?,?,?,?)",(nm,addr,city,pin) )
+                
+             #    con.commit()
+             #    msg = "Record successfully added"
       except:
          # con.rollback()
          msg = "error in insert operation"
       
       finally:
          return render_template("result.html",msg = msg)
-         # con.close()
+         con.close()
 
 # @app.route('/list')
 # pass

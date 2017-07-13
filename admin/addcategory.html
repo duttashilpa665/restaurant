@@ -6,7 +6,12 @@
 </head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/style.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/fonts.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/iconeffects.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" type="text/css" rel="stylesheet">
+
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <link href="css/fonts.css" type="text/css" rel="stylesheet">
 <link href="css/iconeffects.css" type="text/css" rel="stylesheet">
@@ -64,30 +69,34 @@ function validateForm() {
 </div>
 <div class="outter-wp">
 
-<form action = "{{ url_for('addrec') }}" method = "POST">
+<!-- <form action = "{{ url_for('addrec') }}" method = "POST">
  <h3>Student Information</h3>
- Name<br>
- <input type = "text" name = "nm" /></br>
+ Category Id:<br>
+ <input type = "text" name = "catid"
+ Category Name :<br>
+ <input type = "text" name = "categoryname" /></br>
  
- Address<br>
- <textarea name = "add" ></textarea><br>
+ Category Price :<br>
+ <textarea name = "price" ></textarea><br>
  
- City<br>
- <input type = "text" name = "city" /><br>
+ Category Description :<br>
+ <input type = "text" name = "des" /><br>
  
- PINCODE<br>
- <input type = "text" name = "pin" /><br>
+ 
  <input type = "submit" value = "submit" /><br>
-</form>
+</form> -->
 
-
-<!-- <form id="frmCategory" method="post" onSubmit="return validateForm()">
+<form action = "{{ url_for('addrec') }}" method = "POST">
  <div class="forms-main">
           <div class="graph-form">
             <div class="form-body">
               
                 <h1>Add Category
                 </h1>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Category ID:</label>
+                  <input class="form-control" name="catid" id="txtCategoryName" type="text">
+                </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Category Name :</label>
                   <input class="form-control" name="categoryname" id="txtCategoryName" type="text">
@@ -100,17 +109,14 @@ function validateForm() {
                   <label for="exampleInputPassword1">Category Description :</label>
                   <textarea type="text" class="form-control" name="des" id="txtdes"></textarea>
                 </div>
-                 <div class="form-group">
-                  <label for="exampleInputPassword1">Category Sequence :</label>
-                  <textarea type="text" class="form-control" name="seq" id="txtseq"></textarea>
-                </div>
-<input name="submit" id="btnSubmit" class="submit1" type="submit">
-        <input name="cancel" id="btnCancel" value="Cancel" class="cancel admn-btn" type="button">
-        <input name="reset" id="btnReset" value="Reset" class="cancel admn-btn" type="button">
+                
+<input name="submit" values="submit" id="btnSubmit" class="submit1" type="submit">
+        <!-- <input name="cancel" id="btnCancel" value="Cancel" class="cancel admn-btn" type="button">
+        <input name="reset" id="btnReset" value="Reset" class="cancel admn-btn" type="button"> -->
 </div>
 </div>
 </div>
-</form> -->
+</form>
 </div>
 <footer>
 <p>© 2016. <a href="#" target="_blank">Injectables</a></p>

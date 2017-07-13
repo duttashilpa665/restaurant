@@ -23,6 +23,7 @@ function validateForm() {
         alert("Category Name should not be empty.");
         return false;
     }
+    
 }
 </script>
 
@@ -50,7 +51,15 @@ function validateForm() {
 				</div>
 </div>
 <div class="outter-wp">
-<form id="frmCategory" method="post" onSubmit="return validateForm()">
+
+<form name="myForm" action="/action_page_post.php"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+
+
+<!-- <form id="frmCategory" method="post" onSubmit="return validateForm()">
  <div class="forms-main">
           <div class="graph-form">
             <div class="form-body">
@@ -79,7 +88,7 @@ function validateForm() {
 </div>
 </div>
 </div>
-</form>
+</form> -->
 </div>
 <footer>
 <p>© 2016. <a href="#" target="_blank">Injectables</a></p>

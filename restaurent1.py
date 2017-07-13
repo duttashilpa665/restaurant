@@ -8,6 +8,11 @@ cursor = db.cursor()
 db.rollback()
 
 # execute SQL query using execute() method.
+# print("to write","insert into product_details values('"+idx+"','"+name+"','"+cat+"','"+qty+"','"+price+"');")
+# cursor.execute("select * from product_details;")
+# a=cursor.fetchall()
+# print a
+
 
 while 1:
 	a=raw_input("Enter id, product name,category,quantity,price separated by space.to quit press 0")
@@ -18,7 +23,7 @@ while 1:
 	qty=a.split(" ")[3]
 	price=a.split(" ")[4]
 	# pass
-	print("to write","insert into product_details values('"+idx+"','"+name+"','"+cat+"','"+qty+"','"+price+"');")
+
 	try:
 		# print("writing","insert into product_details values(`"+idx+"`,`"+name+"`,`"+cat+"`,`"+qty+"`,`"+price+"`);")
 		cursor.execute("insert into product_details values('"+idx+"','"+name+"','"+cat+"','"+qty+"','"+price+"');")

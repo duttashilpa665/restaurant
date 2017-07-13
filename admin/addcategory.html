@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addcategory</title>
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/fonts.css" type="text/css" rel="stylesheet">
+<link href="css/iconeffects.css" type="text/css" rel="stylesheet">
+<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<!----------admin------------>
+<script type="text/javascript" language="javascript">
+function validateForm() {
+    var x = document.forms["frmCategory"]["categoryname"].value;
+    if (x == null || x == "") {
+        alert("Category Name should not be empty.");
+        return false;
+    }
+}
+</script>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!----------admin-----//------->
+<body>
+<!-------------admin-------------->
+ 
+ <div class="page-container">
+	<div class="left-content">
+	   <div class="inner-content">
+			<div class="header-section">	
+ <div class="header-section">
+						<!--menu-right-->
+						<div class="top_menu ">
+							<!--/profile_details-->
+								<div class="profile_details_left">
+							</div>
+							<div class="clearfix"></div>	
+							<!--//profile_details-->
+						</div>
+						<!--//menu-right-->
+					<div class="clearfix"></div>
+				</div>
+</div>
+<div class="outter-wp">
+<form id="frmCategory" method="post" onSubmit="return validateForm()">
+ <div class="forms-main">
+          <div class="graph-form">
+            <div class="form-body">
+              
+                <h1>Add Category
+                </h1>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Category Name :</label>
+                  <input class="form-control" name="categoryname" id="txtCategoryName" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Category Price :</label>
+                  <input class="form-control" name="price" id="txtPrice" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Category Description :</label>
+                  <textarea type="text" class="form-control" name="des" id="txtdes"></textarea>
+                </div>
+                 <div class="form-group">
+                  <label for="exampleInputPassword1">Category Sequence :</label>
+                  <textarea type="text" class="form-control" name="seq" id="txtseq"></textarea>
+                </div>
+<input name="submit" id="btnSubmit" class="submit1" type="submit">
+        <input name="cancel" id="btnCancel" value="Cancel" class="cancel admn-btn" type="button">
+        <input name="reset" id="btnReset" value="Reset" class="cancel admn-btn" type="button">
+</div>
+</div>
+</div>
+</form>
+</div>
+<footer>
+<p>© 2016. <a href="#" target="_blank">Injectables</a></p>
+</footer>	
+<div class="sidebar-menu">
+<header class="logo">
+<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo"> <h1>Admin panel</h1></span> 
+					<!--<img id="logo" src="" alt="Logo"/>--> 
+				  </a> 
+				</header>
+			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+			<!--/down-->
+							<div class="down">	
+									<h1><img src="images/logo.png"></h1>
+									
+									</div>
+							   <!--//down-->
+                           <div class="menu">
+									<ul id="menu">
+								<li><a href="#"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+										 <li id="menu-academico"><a href="#"><i class="fa fa-table"></i> <span> Catagory</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+										   <ul id="menu-academico-sub">
+											<li id="menu-academico-avaliacoes"><a href="#">Add Catagory</a></li>
+											<li id="menu-academico-boletim"><a href="#">Catagory List</a></li>
+											<li id="menu-academico-avaliacoes"><a href="#">Edit Catagory</a></li>
+											
+										  </ul>
+										</li>
+										 <li id="menu-academico"><a href="#"><i class="fa fa-file-text-o"></i> <span>Product</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+											 <ul id="menu-academico-sub">
+												<li id="menu-academico-avaliacoes"><a href="#">Add product</a></li>
+												<li id="menu-academico-boletim"><a href="#">View Product</a></li>
+												<li id="menu-academico-boletim"><a href="#">Edit Product</a></li>
+												
+											  </ul>
+										 </li>
+                                         <li id="menu-academico"><a href="#"><i class="fa fa-calendar"></i> <span>Calander</span> </a></li>
+                                         <li id="menu-academico"><a href="#"><i class="fa fa-info"></i> <span>More info</span> </a></li>
+									<!--<li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
+									<li id="menu-academico" ><a href="#"><i class="lnr lnr-book"></i> <span>Pages</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+										  <ul id="menu-academico-sub" >
+										    <li id="menu-academico-avaliacoes" ><a href="login.html">Login</a></li>
+										    <li id="menu-academico-boletim" ><a href="register.html">Register</a></li>
+											<li id="menu-academico-boletim" ><a href="404.html">404</a></li>
+											<li id="menu-academico-boletim" ><a href="sign.html">Sign up</a></li>
+											<li id="menu-academico-boletim" ><a href="profile.html">Profile</a></li>
+										  </ul>
+									 </li>
+									 <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Mail Box</span><span class="fa fa-angle-right" style="float: right"></span></a>
+									   <ul>
+										<li><a href="inbox.html"><i class="fa fa-inbox"></i> Inbox</a></li>
+										<li><a href="compose.html"><i class="fa fa-pencil-square-o"></i> Compose Mail</a></li>
+										<li><a href="editor.html"><span class="lnr lnr-highlight"></span> Editors Page</a></li>
+									
+									  </ul>
+									</li>
+							        <li id="menu-academico" ><a href="#"><i class="lnr lnr-layers"></i> <span>Components</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+										 <ul id="menu-academico-sub" >
+											<li id="menu-academico-avaliacoes" ><a href="grids.html">Grids</a></li>
+											<li id="menu-academico-boletim" ><a href="media.html">Media Objects</a></li>
+
+										  </ul>
+									 </li>
+									<li><a href="chart.html"><i class="lnr lnr-chart-bars"></i> <span>Charts</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+									  <ul>
+										<li><a href="map.html"><i class="lnr lnr-map"></i> Maps</a></li>
+										<li><a href="graph.html"><i class="lnr lnr-apartment"></i> Graph Visualization</a></li>
+									</ul>
+									</li>
+									<li id="menu-comunicacao" ><a href="#"><i class="fa fa-smile-o"></i> <span>More</span><span class="fa fa-angle-double-right" style="float: right"></span></a>
+									  <ul id="menu-comunicacao-sub" >
+										<li id="menu-mensagens" style="width:120px" ><a href="project.html">Projects <i class="fa fa-angle-right" style="float: right; margin-right: -8px; margin-top: 2px;"></i></a>
+										  <ul id="menu-mensagens-sub" >
+											<li id="menu-mensagens-enviadas" style="width:130px" ><a href="ribbon.html">Ribbons</a></li>
+											<li id="menu-mensagens-recebidas"  style="width:130px"><a href="blank.html">Blank</a></li>
+										  </ul>
+										</li>
+										<li id="menu-arquivos" ><a href="500.html">500</a></li>
+									  </ul>
+									</li>-->
+								  </ul>
+								</div>
+							  </div><script>
+							var toggle = true;
+										
+							$(".sidebar-icon").click(function() {                
+							  if (toggle)
+							  {
+								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+								$("#menu span").css({"position":"absolute"});
+							  }
+							  else
+							  {
+								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+								setTimeout(function() {
+								  $("#menu span").css({"position":"relative"});
+								}, 400);
+							  }
+											
+											toggle = !toggle;
+										});
+							</script>	
+<script src="sub_files/scripts.js"></script>
+</div>
+</div>
+</div>
+<!-------------admin--------//------>
+</body>
+</html>

@@ -1,0 +1,40 @@
+import MySQLdb
+
+# Open database connection
+db = MySQLdb.connect("localhost","root","abc","shilpa" )
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+db.rollback()
+
+# execute SQL query using execute() method.
+# print("to write","insert into product_details values('"+idx+"','"+name+"','"+cat+"','"+qty+"','"+price+"');")
+html_old=""
+
+while(1):
+	f=open("inner-2.tmpl","r")
+	html_read=f.read()
+	f.close()
+	cursor.execute("select * from product_details;")
+	result=cursor.fetchall()
+	db.close()
+	db = MySQLdb.connect("localhost","root","abc","shilpa" )
+
+	# prepare a cursor object using cursor() method
+	cursor = db.cursor()
+	db.rollback()
+
+	print result
+	html_req=""
+	tmpl="<li>#</li>"
+	for each in result:
+		sub=each[1]
+		tmpl_here=tmpl.split('#')[0]+sub+tmpl.split('#')[1]
+		html_req+=tmpl_here+"\n"
+	html_final=html_read.split('<!-- INSERT HERE -->')[0]+"\n"+html_req+"\n"+html_read.split('<!-- INSERT HERE -->')[1]
+	if html_final!=html_old:
+		f=open("index.html","w")
+		html_read=f.write(html_final)
+		f.close()
+		html_old=html_final
+		print "Wrote to file"

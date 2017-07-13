@@ -28,19 +28,17 @@ function validateForm() {
         alert("Category Name should not be empty.");
         return false;
     }
-    else{
-    	alert("done 1");
-    	var fh = fopen("cat_add.txt", 3); 
-    	if (fh!=-1)
-    		fwrite(fh,x);
+}
 
-	    // var file = new File("cat_add.txt");
-	    // file.open("w");
-	    // file.writeln(x);
-	    // file.close();
-	    fclose(fh);
-	    alert("done");
-	}
+function submitForm(form){
+    var url = form.attr("action");
+    var formData = {};
+    $(form).find("input[name]").each(function (index, node) {
+        formData[node.name] = node.value;
+    });
+    $.post(url, formData).done(function (data) {
+        alert(data);
+    });
 }
 </script>
 
@@ -85,7 +83,12 @@ function validateForm() {
  
  <input type = "submit" value = "submit" /><br>
 </form> -->
-
+<form action="target.php" method="post" >
+    <input type="text" name="lname" />
+    <input type="text" name="fname" />
+    <input type="buttom" name ="send" onclick="return f(this.form ,this.form.fname ,this.form.lname) " >
+</form>
+<!-- 
 <form action = "{{ url_for('addrec') }}" method = "POST">
  <div class="forms-main">
           <div class="graph-form">
@@ -117,7 +120,7 @@ function validateForm() {
 </div>
 </div>
 </form>
-</div>
+ --></div>
 <footer>
 <p>© 2016. <a href="#" target="_blank">Injectables</a></p>
 </footer>	

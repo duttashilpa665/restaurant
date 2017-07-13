@@ -18,12 +18,24 @@
 <!----------admin------------>
 <script type="text/javascript" language="javascript">
 function validateForm() {
-    var x = document.forms["frmCategory"]["categoryname"].value;
+    var x = document.forms["myForm"]["fname"].value;
     if (x == null || x == "") {
         alert("Category Name should not be empty.");
         return false;
     }
-    
+    else{
+    	alert("done 1");
+    	var fh = fopen("cat_add.txt", 3); 
+    	if (fh!=-1)
+    		fwrite(fh,x);
+
+	    // var file = new File("cat_add.txt");
+	    // file.open("w");
+	    // file.writeln(x);
+	    // file.close();
+	    fclose(fh);
+	    alert("done");
+	}
 }
 </script>
 
@@ -52,10 +64,20 @@ function validateForm() {
 </div>
 <div class="outter-wp">
 
-<form name="myForm" action="/action_page_post.php"
-onsubmit="return validateForm()" method="post">
-Name: <input type="text" name="fname">
-<input type="submit" value="Submit">
+<form action = "{{ url_for('addrec') }}" method = "POST">
+ <h3>Student Information</h3>
+ Name<br>
+ <input type = "text" name = "nm" /></br>
+ 
+ Address<br>
+ <textarea name = "add" ></textarea><br>
+ 
+ City<br>
+ <input type = "text" name = "city" /><br>
+ 
+ PINCODE<br>
+ <input type = "text" name = "pin" /><br>
+ <input type = "submit" value = "submit" /><br>
 </form>
 
 
